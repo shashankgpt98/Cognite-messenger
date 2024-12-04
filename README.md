@@ -21,7 +21,7 @@ This project is a basic chat application built using React. It allows users to s
 
 
 ```js
-git clone <repository-url>
+git clone https://github.com/shashankgpt98/Cognite-messenger.git
 cd Cognite-messenger
 npm install or sudo npm install(in case of access issue)
 npm run dev
