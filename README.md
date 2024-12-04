@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# Cognite-messenger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a basic chat application built using React. It allows users to send and view messages with their friends.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Please use node version `v20.12.2`
 
-## Expanding the ESLint configuration
+## Features
+- User Selection: Users can log in as a specific user (no authentication implemented).
+- Friend Selection: Logged-in users can select a friend to chat with.
+- Send Messages: Users can send messages to their friends.
+- View Chat History: Chat history between the logged-in user and the selected friend is displayed dynamically.
+- Dynamic Updates: Messages update in real-time within the app (no backend integration).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
+- React: For building the user interface.
+- React Context API: For managing global state (user and messages).
+- TypeScript: For type safety and better developer experience.
+- Node version:  `v20.12.2`
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+git clone <repository-url>
+cd Cognite-messenger
+npm install or sudo npm install(in case of access issue)
+npm run dev
 ```
+
+## How It Works
+### 1. User Context:
+-  The UserContext provides the currently logged-in user and the list of users.
+- Each user has a unique userId, userName, and a list of friends.
+
+### 2. Message Context:
+- The MessageContext manages the messages sent between users.
+- A sendMessage function allows users to send messages to their friends.
+
+### 3. Chat Component:
+- Displays a dropdown to select a friend to chat with.
+- Shows the chat history between the current user and the selected friend.
+- Allows the user to type and send new messages.
